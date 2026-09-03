@@ -2,15 +2,43 @@
 
 import { useState } from "react";
 import { ChevronDown, House, Menu, X } from "lucide-react";
+import Link from "next/link";
 import "./small-nav.css"
 
 const tabs = [
-	{ label: "英語ネイティブの英文校正", hasMenu: true },
-	{ label: "ジャーナル投稿支援", hasMenu: true },
-	{ label: "学術AIツール", hasMenu: true },
-	{ label: "学術翻訳", hasMenu: true },
-	{ label: "エナゴについて", hasMenu: true },
-	{ label: "FAQ＆学習リソース", hasMenu: true },
+	{
+		label: "英語ネイティブの英文校正",
+		href: "/english-proofreading",
+	},
+	{
+		label: "ジャーナル投稿支援",
+		href: "/journal-support",
+	},
+	{
+		label: "学術AIツール",
+		href: "/academic-ai",
+	},
+	{
+		label: "学術翻訳",
+		href: "/academic-translation",
+	},
+	{
+		label: "エナゴについて",
+		href: "/about",
+	},
+	{
+		label: "FAQ＆学習リソース",
+		href: "/faq",
+	},
+];
+
+const tabContent = [
+	"英語ネイティブの英文校正",
+	"ジャーナル投稿支援",
+	"学術AIツール",
+	"学術翻訳",
+	"エナゴについて",
+	"FAQ＆学習リソース",
 ];
 
 export function SmallNav() {
@@ -36,7 +64,7 @@ export function SmallNav() {
 						role="group"
 						aria-label="Main navigation"
 					>
-						{tabs.map((tab, index) => (
+						{/*{tabs.map((tab, index) => (
 							<button
 								key={tab.label}
 								type="button"
@@ -54,9 +82,20 @@ export function SmallNav() {
 								<span>{tab.label}</span>
 								<ChevronDown size={20} className="btn-span" />
 							</button>
+						))}*/}
+						{tabs.map((tab) => (
+							<Link
+								key={tab.label}
+								href={tab.href}
+								className="btn main-tab"
+							>
+								<span>{tab.label}</span>
+								<ChevronDown size={20} className="btn-span" />
+							</Link>
 						))}
 					</div>
 				</div>
+				{/*<h2>{tabContent[selectedTab]}</h2>*/}
 
 				{/* phone */}
 				<div className="mobile-tabs d-md-none w-100">
@@ -86,7 +125,7 @@ export function SmallNav() {
 					{menuOpen && (
 						<div className="mobile-tabs-menu">
 
-							{tabs.map((tab, index) => (
+							{/*{tabs.map((tab, index) => (
 								<button
 									key={tab.label}
 									type="button"
@@ -100,8 +139,20 @@ export function SmallNav() {
 
 									<ChevronDown size={18} />
 								</button>
-							))}
+							))}*/}
 
+							{tabs.map((tab, index) => (
+								<Link
+									key={tab.label}
+									href={tab.href}
+									className={`mobile-tab ${selectedTab === index ? "is-selected" : ""
+										}`}
+									onClick={() => handleTabClick(index)}
+								>
+									<span>{tab.label}</span>
+									<ChevronDown size={18} />
+								</Link>
+							))}
 						</div>
 					)}
 
