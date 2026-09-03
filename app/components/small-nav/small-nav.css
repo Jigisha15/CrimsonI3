@@ -1,0 +1,151 @@
+.tab-bar-div {
+	background-color: #464646;
+	color: #ffffff;
+	width: 100%;
+}
+
+
+.desktop-tabs {
+	min-height: 52px;
+	gap: 8px;
+}
+
+.home-icon {
+	flex-shrink: 0;
+	width: 22px;
+	height: 22px;
+}
+
+.tabs-bar {
+	border-radius: 0 !important;
+}
+
+.main-tab {
+	padding: 10px;
+	border-radius: 0 !important;
+
+	font-size: 15px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/*border: 1px solid white;*/
+	gap: 1px;
+	white-space: nowrap;
+	min-width: max-content;
+
+	color: #ffffff;
+	background-color: transparent;
+
+	transition: all 0.2s ease;
+}
+
+.btn-span {
+	margin-top: 9px;
+	color: #d6a900;
+}
+
+.main-tab:hover {
+	background-color: #fff9d6;
+	color: #d6a900;
+}
+
+.main-tab.is-selected {
+	background-color: #464646;
+	color: #e6b800;
+	font-weight: 700;
+}
+
+.main-tab:focus,
+.main-tab:active {
+	box-shadow: none !important;
+}
+
+
+.mobile-tabs {
+	background-color: #464646;
+}
+
+.mobile-tabs-header {
+	width: 100%;
+	min-height: 52px;
+	padding: 0 16px;
+}
+
+.mobile-menu-button {
+	width: 40px;
+	height: 40px;
+
+	padding: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: #ffffff;
+	background-color: transparent;
+
+	border: none !important;
+	border-radius: 0;
+
+	box-shadow: none !important;
+}
+
+.mobile-menu-button:hover {
+	color: #e6b800;
+}
+
+.mobile-menu-button:focus {
+	box-shadow: none !important;
+}
+
+
+.mobile-tabs-menu {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-tab {
+	width: 100%;
+	min-height: 48px;
+
+	padding: 0 20px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	color: #ffffff;
+	background-color: #464646;
+
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+	font-size: 14px;
+
+	cursor: pointer;
+
+	transition: all 0.2s ease;
+}
+
+.mobile-tab:hover {
+	background-color: #fff9d6;
+	color: #d6a900;
+}
+
+.mobile-tab.is-selected {
+	color: #e6b800;
+	font-weight: 700;
+}
+
+
+@media (max-width: 767px) {
+	.mobile-tabs-header {
+		padding: 0 16px;
+	}
+}
